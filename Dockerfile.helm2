@@ -17,7 +17,7 @@ RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/
 RUN apk add glibc-2.23-r3.apk; \
     rm glibc-2.23-r3.apk
 
-RUN curl https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION}-linux-amd64.tar.gz | tar zx; \
+RUN curl https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz | tar zx; \
     mv linux-amd64/helm /usr/bin/; \
 	mv linux-amd64/tiller /usr/bin/; \
     /usr/bin/helm init --client-only
