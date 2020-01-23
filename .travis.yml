@@ -16,13 +16,12 @@ script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - MAIN_TAG="${SUNSTONE_VERSION}-${HELM_VERSION}-${KUBECTL_VERSION}"
   - HELM_VERSION_MAJOR=`echo $HELM_VERSION | cut -d'.' -f1`
-  - IMAGE_NAME=sunstone-helm${HELM}-kubectl
   - |
     docker build -f Dockerfile.helm${HELM_VERSION_MAJOR} . \
       -t digillect/sunstone-helm-kubectl:${MAIN_TAG} \
-      -t digillect/sunstone-helm${HELM_VERSION_MAJOR}-kubectl \
+      -t digillect/sunstone-helm-kubectl:helm${HELM_VERSION_MAJOR} \
       --build-arg SUNSTONE_VERSION=${SUNSTONE_VERSION} \
       --build-arg HELM_VERSION=${HELM_VERSION} \
       --build-arg KUBECTL_VERSION=${KUBECTL_VERSION}
   - docker push digillect/sunstone-helm-kubectl:${MAIN_TAG}
-  - docker push digillect/${IMAGE_NAME}
+  - docker push digillect/sunstone-helm-kubectl:helm${HELM_VERSION_MAJOR}
