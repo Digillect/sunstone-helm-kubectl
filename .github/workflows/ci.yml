@@ -6,7 +6,7 @@ on:
       - 'master'
 
 env:
-  SUNSTONE_VERSION: '0.7.4'
+  SUNSTONE_VERSION: '0.7.5'
   KUBECTL_VERSION: '1.21.5'
   HELM_VERSION: '3.7.1'
 
