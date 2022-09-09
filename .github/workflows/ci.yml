@@ -7,9 +7,9 @@ on:
       - 'master'
 
 env:
-  SUNSTONE_VERSION: '0.7.6'
-  KUBECTL_VERSION: '1.21.5'
-  HELM_VERSION: '3.7.1'
+  SUNSTONE_VERSION: '0.7.7'
+  KUBECTL_VERSION: '1.25.0'
+  HELM_VERSION: '3.9.4'
 
 jobs:
   build:
